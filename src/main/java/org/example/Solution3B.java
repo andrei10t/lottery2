@@ -65,14 +65,11 @@ public class Solution3B {
   private static class ChunkProcessor implements Runnable {
     private final MemorySegment chunk;
     private final Set<String> winners;
-    //    private final int myIndex;
     private final Set<String> winningNumbers;
-//    private final Map<String, StationStats> statsMap = new HashMap<>();
 
     ChunkProcessor(MemorySegment chunk, Set<String> winners, Set<String> winningNumbers) {
       this.chunk = chunk;
       this.winners = winners;
-//      this.myIndex = myIndex;
       this.winningNumbers = winningNumbers;
     }
 

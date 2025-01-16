@@ -64,14 +64,11 @@ public class Solution3C {
   private static class ChunkProcessor implements Runnable {
     private final MemorySegment chunk;
     private final Set<String> winners;
-    //    private final int myIndex;
     private final Set<String> winningNumbers;
-//    private final Map<String, StationStats> statsMap = new HashMap<>();
 
     ChunkProcessor(MemorySegment chunk, Set<String> winners, Set<String> winningNumbers) {
       this.chunk = chunk;
       this.winners = winners;
-//      this.myIndex = myIndex;
       this.winningNumbers = winningNumbers;
     }
 
@@ -94,8 +91,6 @@ public class Solution3C {
       return new String(byteArray, StandardCharsets.UTF_8);
     }
 
-
-
     @Override
     public void run() {
       for (var cursor = 0L; cursor < chunk.byteSize(); ) {
@@ -104,7 +99,6 @@ public class Solution3C {
         // If not we go to the next line (without saving as strings next numbers and name)
         // If all 6 numbers are winning we read the name and save it.
         // This reduced StringAt() from 70% of total time to 22%. Compared with 3A
-
 
         // I feel some optimization can be made with finding ';', we know numbers are one or two digits
         // and no one digit number will start with >4
