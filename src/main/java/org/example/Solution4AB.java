@@ -150,6 +150,7 @@ public class Solution4AB {
                         var num1 = numberAt(firstSemicolonPos + 1, secondSemicolonPos);
                         // instead of checking with contains.
                         if (!winningNumbers.get(num1)) {
+                            //newlinePos = findNewLine(cursor+nameLen+Long.BYTES);
                             newlinePos = findByte(secondSemicolonPos + 1, '\n');
                             cursor = newlinePos + 1;
                             break;
@@ -157,6 +158,7 @@ public class Solution4AB {
                         var thirdSemicolonPos = findByte(secondSemicolonPos + 1, ';');
                         var num2 = numberAt(secondSemicolonPos + 1, thirdSemicolonPos);
                         if (!winningNumbers.get(num2)) {
+                            //newlinePos = findNewLine(cursor+nameLen+Long.BYTES);
                             newlinePos = findByte(thirdSemicolonPos + 1, '\n');
                             cursor = newlinePos + 1;
                             break;
@@ -164,6 +166,7 @@ public class Solution4AB {
                         var fourthSemicolonPos = findByte(thirdSemicolonPos + 1, ';');
                         var num3 = numberAt(thirdSemicolonPos + 1, fourthSemicolonPos);
                         if (!winningNumbers.get(num3)) {
+                            //newlinePos = findNewLine(cursor+nameLen+Long.BYTES);
                             newlinePos = findByte(fourthSemicolonPos + 1, '\n');
                             cursor = newlinePos + 1;
                             break;
@@ -171,6 +174,7 @@ public class Solution4AB {
                         var fifthSemicolonPos = findByte(fourthSemicolonPos + 1, ';');
                         var num4 = numberAt(fourthSemicolonPos + 1, fifthSemicolonPos);
                         if (!winningNumbers.get(num4)) {
+                            //newlinePos = findNewLine(cursor+nameLen+Long.BYTES);
                             newlinePos = findByte(fifthSemicolonPos + 1, '\n');
                             cursor = newlinePos + 1;
                             break;
@@ -178,6 +182,7 @@ public class Solution4AB {
 
                         var sixthSemicolonPos = findByte(fifthSemicolonPos + 1, ';');
                         var num5 = numberAt(fifthSemicolonPos + 1, sixthSemicolonPos);
+                        //newlinePos = findNewLine(cursor+nameLen+Long.BYTES);
                         newlinePos = findByte(sixthSemicolonPos + 1, '\n');
                         if (!winningNumbers.get(num5)) {
                             cursor = newlinePos + 1;
