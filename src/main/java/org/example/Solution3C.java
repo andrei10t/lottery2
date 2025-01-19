@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-
+//17sec
 public class Solution3C {
 
   public static void processFile(String inputFile, String outputFile, Set<String> winningNumbers) {
@@ -39,7 +39,7 @@ public class Solution3C {
         final long chunkStart = chunkStartOffsets[i];
         final long chunkLimit = (i + 1 < chunkCount) ? chunkStartOffsets[i + 1] : length;
         threads[i] = new Thread(new ChunkProcessor(
-            mappedFile.asSlice(chunkStart, chunkLimit - chunkStart), winners, winningNumbers));
+                mappedFile.asSlice(chunkStart, chunkLimit - chunkStart), winners, winningNumbers));
       }
       for (var thread : threads) {
         thread.start();
@@ -73,15 +73,15 @@ public class Solution3C {
     }
 
     private long findByte(long cursor, int b) {
-      for (var i = cursor; i < chunk.byteSize(); i++) {
+      //not needing any check, for sure there is a ';'
+      for (var i = cursor; ; i++) {
         if (chunk.get(JAVA_BYTE, i) == b) {
           return i;
         }
       }
-      throw new RuntimeException(((char) b) + " not found");
     }
 
-//    Tried some other solutions for stringAt()
+    //    Tried some other solutions for stringAt()
     private String stringAt(long start, long limit) {
       long size = limit - start;
       byte[] byteArray = new byte[(int) size];

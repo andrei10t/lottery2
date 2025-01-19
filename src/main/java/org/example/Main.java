@@ -1,9 +1,9 @@
 package org.example;
 
 import java.util.Arrays;
+import java.util.BitSet;
 import java.util.HashSet;
 import java.util.Set;
-
 
 public class Main {
 
@@ -12,8 +12,9 @@ public class Main {
     String inputFile = args[0];
     String outputFile = args[1];
     Set<String> winningNumbers = validateInput(Arrays.copyOfRange(args, 2, args.length));
+
     long startTime = System.currentTimeMillis();
-    Solution3C.processFile(inputFile, outputFile, winningNumbers);
+    Solution4AB.processFile(inputFile, outputFile, stringToBitSet(winningNumbers));
     long endTime = System.currentTimeMillis();
     long durationInMillis = endTime - startTime;
     System.out.println("Elapsed time: " + durationInMillis + " ms");
@@ -41,5 +42,14 @@ public class Main {
       throw new IllegalArgumentException("Only numbers are allowed.");
     }
     return validNumbers;
+  }
+
+  private static BitSet stringToBitSet(Set<String> numbers) {
+    BitSet bitSet = new BitSet(64);
+    for (String numberStr : numbers) {
+      int number = Integer.parseInt(numberStr);
+      bitSet.set(number);
+    }
+    return bitSet;
   }
 }
