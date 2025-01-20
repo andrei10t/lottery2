@@ -15,7 +15,7 @@ public class Main {
 
     long startTime = System.currentTimeMillis();
 //    Solution3C.processFile(inputFile, outputFile, winningNumbers);
-    Solution4A.processFile(inputFile, outputFile, stringToBitSet(winningNumbers));
+    Solution4B.processFile(inputFile, outputFile, stringToBitSet(winningNumbers));
     long endTime = System.currentTimeMillis();
     long durationInMillis = endTime - startTime;
     System.out.println("Elapsed time: " + durationInMillis + " ms");

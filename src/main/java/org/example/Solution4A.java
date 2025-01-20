@@ -73,24 +73,20 @@ public class Solution4A {
         }
 
         private long findByte(long cursor, int b) {
-            for (var i = cursor;; i++) {
+            for (var i = cursor; ; i++) {
                 if (chunk.get(JAVA_BYTE, i) == b) {
                     return i;
                 }
             }
         }
 
-//        read as number, no longer read as strings
+        //        read as number, no longer read as strings
         private Integer numberAt(long start, long limit) {
             long size = limit - start;
             int result = 0;
             for (int i = 0; i < size; i++) {
                 byte b = chunk.get(JAVA_BYTE, start+i);
                 result = result * 10 + (b - '0');
-//                var newByte = chunk.get(JAVA_BYTE, start + i);
-//                result = result << 8;
-//                result = result | newByte;
-//                result = ((result << 8) | (chunk.get(JAVA_BYTE, start + i)));
             }
             return result;
         }
