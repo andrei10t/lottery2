@@ -15,7 +15,7 @@ import java.util.Set;
 
 import static java.lang.foreign.ValueLayout.JAVA_BYTE;
 
-// 12704 ms
+// 12305 ms
 public class Solution4B {
 
     public static void processFile(String inputFile, String outputFile, BitSet winningNumbers) {
