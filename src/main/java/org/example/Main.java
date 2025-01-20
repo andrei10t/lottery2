@@ -14,7 +14,8 @@ public class Main {
     Set<String> winningNumbers = validateInput(Arrays.copyOfRange(args, 2, args.length));
 
     long startTime = System.currentTimeMillis();
-    Solution4AB.processFile(inputFile, outputFile, stringToBitSet(winningNumbers));
+//    Solution3C.processFile(inputFile, outputFile, winningNumbers);
+    Solution4A.processFile(inputFile, outputFile, stringToBitSet(winningNumbers));
     long endTime = System.currentTimeMillis();
     long durationInMillis = endTime - startTime;
     System.out.println("Elapsed time: " + durationInMillis + " ms");

@@ -99,6 +99,7 @@ public class Solution3B {
         // and no one digit number will start with >4
         var firstSemicolonPos = findByte(cursor, ';');
         long newlinePos;
+        String name = stringAt(cursor, firstSemicolonPos);
         var secondSemicolonPos = findByte(firstSemicolonPos + 1, ';');
         var num1 = stringAt(firstSemicolonPos + 1, secondSemicolonPos);
         if (!winningNumbers.contains(num1)) {
