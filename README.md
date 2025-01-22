@@ -4,7 +4,7 @@ implemented feedback:
 1. using Bitset(8bytes) for representing winning numbers. => check if bitset of winning numbers has the index(number read) as set.
 2. no longer reading number as string but as int(numberAt) 
 
-in 4AB i tried using the swar but because sometimes i read 8 bytes(for name) and sometimes 1byte(manipulating cursor after reading numbers)
+in 4AB i tried using the swar but I get wrong memory access because sometimes i read 8 bytes(for name) and sometimes 1byte(manipulating cursor after reading numbers)
 ### Options
 ```
 --enable-preview -XX:ActiveProcessorCount=8
