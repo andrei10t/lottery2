@@ -18,7 +18,7 @@ in 4AB i tried using the swar but I get wrong memory access because sometimes i 
 ```
 src/main/resources/pool.csv src/main/resources/output.txt 18 25 48 12 2 16
 ```
-3C is the best solution.  Calling it here in Main
+4A is the best solution.  Calling it here in Main
 ```
 Solution3C.processFile(inputFile, outputFile, winningNumbers);
 ```
